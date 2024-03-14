@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { type TItem } from "@/types/item";
+import { urlFor } from "@/utils/sanity-client";
 
 export default function Item(props: TItem) {
   return (
     <div className="m-2 max-w-sm rounded bg-[#dce7ef] p-4 drop-shadow-lg">
       <Image
-        src={props.image}
+        src={urlFor(props.image)}
         alt={props.name}
         width={512}
         height={512}
